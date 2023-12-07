@@ -1,0 +1,11 @@
+// struct alloc_h {
+// size_t taille;
+// . . .. 
+// }
+// mem_init(void * debut , size_t taille){
+// struct a_h *ptr_h=(struct ah*)debut;//c'est  pas  obligatoire   lors  d'un  void * de faire  un  cast .
+// ptr_h->taille=taille;//equivalent  à ptr_h[0].taille=taille
+
+// ----------------------------------------------------------
+// valeur(pointeur+int)= val(pointeur)+val(int)xtaille(pointeur)
+// Pour  la  soustraction  c 'est  autre chose,   faudera  revoir, (pas  bien compris, (division de taille de  pointeur  ...))
