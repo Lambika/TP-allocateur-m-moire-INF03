@@ -118,23 +118,7 @@ void *mem_alloc(size_t taille) {
     struct fb* libre = head->fit(head->first, taille /*+ sizeof(struct fb)*/);
 
     if(libre == NULL){ return NULL;}
-
-    struct fb zone2 = {libre->size-taille, libre->next};
-    libre->size = taille;
-
-    if(get_header()->first == NULL){
-        res = (void*) head->first;
-        void* Next = (void*) head->first;
-        Next += taille;
-        head->first = (struct fb*)Next;
-        head->first = (fb*)zone2;
-    } else {
-        res = (void*) libre;
-        void* Next = (void*) libre->next;
-        Next += taille;
-        libre ->next = (struct fb*) Next;
-        libre->next = (fb*)zone2;
-    }
+    
     return res;
 }
 
